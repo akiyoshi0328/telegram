@@ -19,6 +19,13 @@
           <hr>
           <div class="scroll">
             <%= @post.caption %>
+            <% @post.comments.each do |comment| %>
+              <p>
+                <%= image_tag comment.user.avatar.variant(combine_options: { resize: "20x20^", crop: "20x20+0+0", gravity: :center }).processed, class: "img-fluid rounded-circle" %>
+                <%= comment.user.name %>
+                <%= truncate(comment.body, length: 30) %>
+              </p>
+            <% end %>
           </div>
         </div>
       </div>
