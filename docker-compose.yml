@@ -9,7 +9,7 @@ services:
         WORK_DIR: $WORK_DIR
     # マウントするディレクトリを指定
     volumes:
-      - .:${WORK_DIR}
+      - .:${WORK_DIR}:cached
       # マウント対象外のディレクトリ(コンテナ内に保存)
       - ${WORK_DIR}/tmp
       - ${WORK_DIR}/log
@@ -32,7 +32,6 @@ services:
     # mysqlのパスワードの暗号化をRailsで参照出来る形式に変更
     ports:
       - 3306:3306
-      
     command: mysqld --default-authentication-plugin=mysql_native_password
 volumes:
   mysql-data:
