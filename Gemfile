@@ -45,12 +45,17 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'kaminari'
 gem 'ransack'
+gem 'rails_admin'
+gem 'rails_admin-i18n'
+gem 'devise-bootstrap-views', '~> 1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'faker'
   gem 'seed-fu', '~> 2.3'
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -61,6 +66,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'bullet'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'annotate'
 end
 
 group :test do
